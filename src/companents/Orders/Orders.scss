@@ -1,0 +1,115 @@
+.orders {
+  position: relative;
+  width: 410px;
+  height: 100%;
+  padding: 24px;
+  background: #1f1d2b;
+  border-radius: 8px;
+  overflow: hidden;
+
+  &__title {
+    color: #fff;
+    font-size: 20px;
+    font-weight: 600;
+    line-height: 140%;
+    margin-bottom: 24px;
+  }
+  &__categor {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    margin-bottom: 24px;
+    gap: 10px;
+
+    button {
+      border: none;
+      color: #ea7c69;
+      font-size: 14px;
+      font-weight: 600;
+      line-height: 140%;
+      padding: 7px 12px;
+      border-radius: 8px;
+      background: transparent;
+      transition: all 0.3s ease;
+      border: 1px solid #393c49;
+    }
+    .ordcat-btn-act {
+      color: #fff;
+      background: #ea7c69;
+      border: 1px solid #ea7c69;
+    }
+  }
+  &__save_title {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 24px;
+    h4,
+    p {
+      color: #fff;
+      font-size: 18px;
+      font-weight: 600;
+      line-height: 140%;
+    }
+  }
+  &__save_righ-title {
+    display: flex;
+    align-items: center;
+    p {
+      margin-left: 43px;
+    }
+  }
+  &__save_list {
+    width: 102%;
+    height: 455px;
+    margin: 0;
+    padding: 0;
+    padding-top: 24px;
+    margin-right: 24px;
+    margin-bottom: 24px;
+    overflow-y: scroll;
+    list-style-type: none;
+    border-top: 1px solid #393c49;
+    border-bottom: 1px solid #393c49;
+  }
+  &__save_list::-webkit-scrollbar {
+    display: none;
+  }
+  &__save_price_box {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 42px;
+
+    p {
+      font-weight: 400;
+      font-size: 14px;
+      line-height: 140%;
+      color: #abbbc2;
+      margin-bottom: 16px;
+    }
+  }
+  &__save_total {
+    p {
+      color: #fff;
+      font-size: 16px;
+      font-weight: 500;
+      line-height: 140%;
+      text-align: right;
+    }
+  }
+  &__submit_btn {
+    width: 100%;
+    padding: 14px 106px;
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 18px;
+    border: none;
+    color: #fafafa;
+    border-radius: 8px;
+    background: #ea7c69;
+    box-shadow: 0px 8px 24px rgba(234, 124, 105, 0.3);
+  }
+}

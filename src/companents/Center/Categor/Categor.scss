@@ -1,0 +1,13 @@
+.categor {
+  position: relative;
+  width: 100%;
+  margin-bottom: 24px;
+
+  &__list {
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+    display: flex;
+    align-items: center;
+  }
+}
