@@ -8,10 +8,9 @@ function Items({ foodArr, saveArr, setSaveArr }) {
 
   const saveFuncHandler = (id) => {
     arr = saveArr
-    let arrSave = saveArr;
     Object.filter(obj => {
       if (obj.id === id) {
-        obj.count = obj.count + 1
+        obj.count += 1
         arr.push(obj)
       }
     })
