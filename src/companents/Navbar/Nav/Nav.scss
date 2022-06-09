@@ -17,53 +17,6 @@
   transition: all 0.4s ease;
 }
 
-.nav__item-act {
-  background: #252836;
-  .topp {
-    content: "";
-    position: absolute;
-    top: -20px;
-    right: 0px;
-    width: 20px;
-    height: 20px;
-    border-radius: 0;
-    background: #252836;
-    transition: all 0.39s ease;
-  }
-  .topp::after {
-    content: "";
-    position: absolute;
-    top: 0px;
-    right: 0px;
-    width: 20px;
-    height: 20px;
-    border-radius: 0 0 25px 0;
-    z-index: 1;
-    background: #1f1d2b;
-  }
-  .bott {
-    content: "";
-    position: absolute;
-    bottom: -20px;
-    right: 0px;
-    width: 20px;
-    height: 20px;
-    border-radius: 0;
-    background: #252836;
-    transition: all 0.39s ease;
-  }
-  .bott::after {
-    content: "";
-    position: absolute;
-    bottom: 0px;
-    right: 0px;
-    width: 20px;
-    height: 20px;
-    border-radius: 0 25px 0 0;
-    z-index: 1;
-    background: #1f1d2b;
-  }
-}
 .nav__btn-act {
   color: #fff;
   background: #ea7c69;

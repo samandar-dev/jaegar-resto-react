@@ -3,7 +3,7 @@ import Menu from './Menu/Menu'
 import Categor from './Categor/Categor'
 import './Center.scss'
 
-function Center({ saveArr, setSaveArr, foodArr, setFoodArr }) {
+function Center({ saveArr, setSaveArr, foodArr, setFoodArr, addFoodArr, setaddFoodArr }) {
   return (
     <>
       <div className="center">
@@ -24,11 +24,17 @@ function Center({ saveArr, setSaveArr, foodArr, setFoodArr }) {
             />
           </div>
         </div>
-        <Categor setFoodArr={setFoodArr} />
+        <Categor
+          setFoodArr={setFoodArr}
+          addFoodArr={addFoodArr}
+          setaddFoodArr={setaddFoodArr}
+        />
         <Menu
           foodArr={foodArr}
           saveArr={saveArr}
           setSaveArr={setSaveArr}
+          addFoodArr={addFoodArr}
+          setaddFoodArr={setaddFoodArr}
         />
       </div>
     </>

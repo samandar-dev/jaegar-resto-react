@@ -65,6 +65,17 @@
       background: transparent;
       border: 1px solid #393c49;
     }
+    select {
+      width: 100%;
+      border: none;
+      padding: 14px;
+      outline: none;
+      color: #abbbc2;
+      border-radius: 8px;
+      margin-bottom: 16px;
+      background: transparent;
+      border: 1px solid #393c49;
+    }
   }
   &__form_btn {
     width: 100%;

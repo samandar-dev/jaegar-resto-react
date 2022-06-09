@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import CategorBtns from './CategorBtns/CategorBtns'
 import './Categor.scss'
 
-function Categor({ setFoodArr }) {
+function Categor({ setFoodArr, addFoodArr, setaddFoodArr }) {
   const categorBtns = [
     {
       id: 1,
@@ -51,6 +51,8 @@ function Categor({ setFoodArr }) {
         <ul className='categor__list'>
           <CategorBtns
             setFoodArr={setFoodArr}
+            addFoodArr={addFoodArr}
+            setaddFoodArr={setaddFoodArr}
             categorBtnArr={categorBtnArr}
             setCategorBtn={setCategorBtn}
           />

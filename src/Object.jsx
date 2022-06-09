@@ -74,7 +74,7 @@ const Foods = [
   {
     id: 10,
     title: "Spicy seasoned seafood noodles",
-    img: "https://picsum.photos/150",
+    img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSIzsXhOb2ICbw0p42GoKqCQrvfmLWklAXuLA&usqp=CAU",
     money: 2.69,
     theRest: 20,
     foodType: "hot-dishes"

@@ -1,12 +1,13 @@
 import React, { useEffect, useState } from 'react'
 import Object from '../../../../Object'
+import EditModal from './EditModal/EditModal'
 import EditCategor from './EditCategor/EditCategor'
 import EditObjItems from './EditObjItems/EditObjItems'
 import EditLeftITems from './EditLeftItems/EditLeftITems'
 import './Edit.scss'
-import EditModal from './EditModal/EditModal'
+import AddItemModal from './AddItems/AddItemModal/AddItemModal'
 
-function Edit({ saveArr, setSaveArr, foodArr, setFoodArr }) {
+function Edit({ saveArr, setSaveArr, foodArr, setFoodArr, addFoodArr, setaddFoodArr }) {
   const settingsArr = [
     {
       id: 1,
@@ -94,15 +95,32 @@ function Edit({ saveArr, setSaveArr, foodArr, setFoodArr }) {
   const [categorBtnArr, setCategorBtnArr] = useState([...categorBtns])
   const [settingObjArr, setSettingObjArr] = useState([])
   const [editModal, setEditModal] = useState(false)
+  const [addModal, setAddModal] = useState(false)
   const [editItem, setEditItem] = useState([])
 
+  const [itemID, setItemID] = useState(0)
+  const [titleVal, setTitleVal] = useState('')
+  const [theRestVal, setTheRestVal] = useState(0)
+  const [moneyVal, setMoneyVal] = useState(0)
+  const [categorVal, setCategorVal] = useState(0)
+
   const editFuncHandler = (id) => {
+    settingObjArr.map(itm => {
+      if (id === itm.id) {
+        setItemID(itm.id)
+        setTitleVal(itm.title)
+        setMoneyVal(itm.money)
+        setTheRestVal(itm.theRest)
+        setCategorVal(itm.foodType)
+      }
+    })
+    setFoodArr([...editItem, ...foodArr])
     setEditItem([...settingObjArr.filter(itm => id === itm.id)])
   }
 
   useEffect(() => {
-    setSettingObjArr(Object.filter(obj => obj.foodType === 'hot-dishes'))
-  }, []);
+    setSettingObjArr(addFoodArr.filter(obj => obj.foodType === 'hot-dishes'))
+  }, [addFoodArr]);
 
   return (
     <>
@@ -131,12 +149,13 @@ function Edit({ saveArr, setSaveArr, foodArr, setFoodArr }) {
                     categorBtnArr={categorBtnArr}
                     setCategorBtn={setCategorBtn}
                     setSettingObjArr={setSettingObjArr}
+                    addFoodArr={addFoodArr}
                   />
                 </ul>
               </div>
               <div className="setting__right_foods">
                 <ul className="setting__right_food_list">
-                  <li className="setting__right_food_item-add">
+                  <li className="setting__right_food_item-add" onClick={() => setAddModal(true)}>
                     <div>
                       <span>+</span>
                       <p>Add new dish</p>
@@ -155,13 +174,29 @@ function Edit({ saveArr, setSaveArr, foodArr, setFoodArr }) {
           </div>
         </div>
       </div>
+      <AddItemModal
+        addModal={addModal}
+        setAddModal={setAddModal}
+        addFoodArr={addFoodArr}
+        setaddFoodArr={setaddFoodArr}
+        foodArr={foodArr}
+        setFoodArr={setFoodArr}
+      />
       <EditModal
+        itemID={itemID}
+        setItemID={setItemID}
+        titleVal={titleVal}
+        setTitleVal={setTitleVal}
+        theRestVal={theRestVal}
+        setTheRestVal={setTheRestVal}
+        moneyVal={moneyVal}
+        setMoneyVal={setMoneyVal}
+        categorVal={categorVal}
+        setCategorVal={setCategorVal}
         editItem={editItem}
         setEditItem={setEditItem}
         editModal={editModal}
         setEditModal={setEditModal}
-        settingObjArr={settingObjArr}
-        setSettingObjArr={setSettingObjArr}
       />
     </>
   )

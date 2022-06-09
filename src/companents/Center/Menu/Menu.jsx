@@ -2,7 +2,7 @@ import React from 'react'
 import Items from './Items/Items'
 import './Menu.scss'
 
-function Menu({ foodArr, saveArr, setSaveArr }) {
+function Menu({ foodArr, saveArr, setSaveArr, addFoodArr, setaddFoodArr }) {
   return (
     <>
       <div className="menu">
@@ -20,6 +20,8 @@ function Menu({ foodArr, saveArr, setSaveArr }) {
             foodArr={foodArr}
             saveArr={saveArr}
             setSaveArr={setSaveArr}
+            addFoodArr={addFoodArr}
+            setaddFoodArr={setaddFoodArr}
           />
         </ul>
       </div>

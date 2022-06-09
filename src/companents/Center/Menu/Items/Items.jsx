@@ -1,14 +1,15 @@
-import React from 'react'
+import React, { useState } from 'react'
 import Object from '../../../../Object'
 import './Items.scss'
 
 let arr = []
 Object.map(obj => obj.count = 0)
 
-function Items({ foodArr, saveArr, setSaveArr }) {
+function Items({ foodArr, saveArr, setSaveArr, addFoodArr, setaddFoodArr }) {
+
   const saveFuncHandler = (id) => {
     arr = saveArr
-    Object.filter(obj => {
+    addFoodArr.filter(obj => {
       if (obj.id === id) {
         obj.count++
         arr.push(obj)
@@ -16,7 +17,6 @@ function Items({ foodArr, saveArr, setSaveArr }) {
     })
     setSaveArr([...arr.filter((elem, inex, obj) => obj.indexOf(elem) === inex)])
   }
-
   return (
     <>
       {foodArr.map((foo, i) => (
@@ -26,7 +26,7 @@ function Items({ foodArr, saveArr, setSaveArr }) {
           </div>
           <div>
             <h4>{foo.title}</h4>
-            <p className='menu__item_money'>{foo.money}</p>
+            <p className='menu__item_money'>$ {foo.money}</p>
             <p className='menu__item_theRest'>{foo.theRest} Bowls available</p>
           </div>
         </li>

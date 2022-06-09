@@ -1,8 +1,7 @@
 import React from 'react'
-import Object from '../../../../../Object'
 import '../../../Categor/CategorBtns/CategorBtns.scss'
 
-function EditCategor({ categorBtnArr, setCategorBtn, setSettingObjArr }) {
+function EditCategor({ categorBtnArr, setCategorBtn, setSettingObjArr, addFoodArr }) {
   const navBtnActive = (id) => {
     setCategorBtn(
       categorBtnArr.map(btn => {
@@ -17,7 +16,7 @@ function EditCategor({ categorBtnArr, setCategorBtn, setSettingObjArr }) {
   }
 
   const categorFuncHandler = (cat) => {
-    setSettingObjArr(Object.filter(btn => btn.foodType === cat));
+    setSettingObjArr(addFoodArr.filter(btn => btn.foodType === cat));
   }
 
   return (

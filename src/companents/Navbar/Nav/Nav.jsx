@@ -1,12 +1,16 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import { NavLink } from 'react-router-dom'
 import './Nav.scss'
 
-function Nav({ navbtnsArr, setNavBtns }) {
+function Nav({ navbtnsArr, setNavBtns, setActID }) {
+
+  const [btnsArr, setBtnsArr] = useState([...navbtnsArr])
+
   const navBtnActive = (id) => {
     setNavBtns(
       navbtnsArr.map(btn => {
         if (btn.id === id) {
+          setActID(btn.id)
           btn.active = true
         }
         else {
@@ -20,19 +24,15 @@ function Nav({ navbtnsArr, setNavBtns }) {
     <>
       {navbtnsArr.map((btn, i) => (
         <NavLink to={`/${btn.pathName}`} key={i + 1}>
-          <li
-            className={`nav__item ${btn.active ? "nav__item-act" : ""}`}
-            onClick={() => navBtnActive(btn.id)}>
+          <li className='nav__item' onClick={() => navBtnActive(btn.id)}>
             <button
-              className={`nav__btn ${btn.active ? "nav__btn-act" : ""}`}
-              onClick={() => navBtnActive(btn.id)}>
+              className={`nav__btn ${btn.active ? "nav__btn-act" : ""}`}>
               <i className={btn.icon}></i>
             </button>
-            <span className='topp'></span>
-            <span className='bott'></span>
           </li>
         </NavLink>
-      ))}
+      ))
+      }
     </>
   )
 }

@@ -1,20 +1,17 @@
 import React from 'react'
 import Edit from './Center/Menu/Edit/Edit'
-import Navbar from './Navbar/Navbar'
-import Orders from './Orders/Orders'
 
-function Setting({ saveArr, setSaveArr, foodArr, setFoodArr }) {
+function Setting({ saveArr, setSaveArr, foodArr, setFoodArr, addFoodArr, setaddFoodArr }) {
   return (
     <>
-      <div className="container">
-        <Navbar />
-        <Edit
-          foodArr={foodArr}
-          setFoodArr={setFoodArr}
-          saveArr={saveArr}
-          setSaveArr={setSaveArr}
-        />
-      </div>
+      <Edit
+        foodArr={foodArr}
+        setFoodArr={setFoodArr}
+        saveArr={saveArr}
+        setSaveArr={setSaveArr}
+        addFoodArr={addFoodArr}
+        setaddFoodArr={setaddFoodArr}
+      />
     </>
   )
 }

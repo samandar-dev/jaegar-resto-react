@@ -1,17 +1,15 @@
-import React from 'react'
-import './EditModal.scss'
+import React, { useRef, useState } from 'react'
+import '../../EditModal/EditModal.scss'
 
-function EditModal({
-  editModal, setEditModal,
-  editItem, setEditItem,
-  itemID, setItemID,
-  titleVal, setTitleVal,
-  theRestVal, setTheRestVal,
-  moneyVal, setMoneyVal,
-  categorVal, setCategorVal,
-}) {
+function AddItemModal({ addModal, setAddModal, addFoodArr, setaddFoodArr, foodArr, setFoodArr }) {
 
-  const editInutsFunc = (e) => {
+  const [itemID, setItemID] = useState(0)
+  const [titleVal, setTitleVal] = useState('')
+  const [theRestVal, setTheRestVal] = useState(0)
+  const [moneyVal, setMoneyVal] = useState(0)
+  const [categorVal, setCategorVal] = useState("")
+
+  const addItemsInputsHandler = (e) => {
     if (e.target.id === 'editName') {
       setTitleVal(e.target.value)
     }
@@ -26,36 +24,42 @@ function EditModal({
     }
   }
 
-  const editSubmitHandler = (e) => {
+  const addItemsSubmitHandler = (e) => {
     e.preventDefault()
-    setEditModal(false)
-    setEditItem(editItem.map(itm => {
-      itm.id = itemID
-      itm.title = titleVal
-      itm.money = moneyVal
-      itm.theRest = theRestVal
-      itm.foodType = categorVal
-    }))
+    let obj = {
+      id: addFoodArr.length + 1,
+      img: "https://picsum.photos/150",
+      title: titleVal,
+      theRest: theRestVal,
+      money: moneyVal,
+      foodType: categorVal,
+      count: 0,
+    }
+    console.log(obj);
+    setaddFoodArr([obj, ...addFoodArr])
+    setFoodArr([obj, ...foodArr])
+    e.target.reset()
   }
 
   return (
     <>
-      <div className={`editmodal ${editModal ? "editModalOpen" : ""}`}>
+      <div className={`editmodal ${addModal ? "editModalOpen" : ""}`}>
         <div className='editmodal__remBtn-box'>
-          <button className='editmodal__remov_btn' onClick={() => setEditModal(false)}>
+          <button className='editmodal__remov_btn'
+            onClick={() => (setAddModal(false), setTitleVal(""), setMoneyVal(0), setTheRestVal(0))}>
             <i className='bx bx-x'></i>
           </button>
         </div>
-        <h2 className="editmodal__title">Edit Item</h2>
-        <form className='editmodal__form'>
+        <h2 className="editmodal__title">Add Item</h2>
+        <form className='editmodal__form' onSubmit={addItemsSubmitHandler}>
           <div className="editmodal__form_inp_box">
             <p>Name</p>
             <input
               type="text"
               name="text" id="editName"
               placeholder='Edit name...'
+              onChange={addItemsInputsHandler}
               value={titleVal}
-              onChange={editInutsFunc}
               required
             />
           </div>
@@ -65,8 +69,8 @@ function EditModal({
               type="number"
               name="number" id="editBolws"
               placeholder='Edit bolws...'
+              onChange={addItemsInputsHandler}
               value={theRestVal}
-              onChange={editInutsFunc}
               required
             />
           </div>
@@ -76,14 +80,14 @@ function EditModal({
               type="number"
               name="number" id="editPrice"
               placeholder='Edit price...'
+              onChange={addItemsInputsHandler}
               value={moneyVal}
-              onChange={editInutsFunc}
               required
             />
           </div>
           <div className="editmodal__form_inp_box">
             <p>Categor</p>
-            <select className='editmodal__form_categor' id='editmodalCategor' onChange={editInutsFunc}>
+            <select className='editmodal__form_categor' id='editmodalCategor' onChange={addItemsInputsHandler}>
               <option value='hot-dishes'>Hot dishes</option>
               <option value='grill'>Grill</option>
               <option value='appetizer'>Appetizer</option>
@@ -92,14 +96,14 @@ function EditModal({
               <option value='cold-dishes'>Cold dishes</option>
             </select>
           </div>
-          <button className='editmodal__form_btn' onClick={editSubmitHandler}>Submit</button>
+          <button className='editmodal__form_btn' type='submit' onClick={() => setAddModal(false)}>Submit</button>
         </form>
       </div>
-      <div className={`editModalboxx ${editModal ? "editModalboxxOpen" : ""}`}
-        onClick={() => (setEditModal(false))}>
+      <div className={`editModalboxx ${addModal ? "editModalboxxOpen" : ""}`}
+        onClick={() => (setAddModal(false), setTitleVal(""), setMoneyVal(0), setTheRestVal(0))}>
       </div>
     </>
   )
 }
 
-export default EditModal
+export default AddItemModal

@@ -15,25 +15,25 @@ function Navbar() {
       id: 2,
       icon: 'bx bxs-offer',
       active: false,
-      pathName: ''
+      pathName: 'nodfaund'
     },
     {
       id: 3,
       icon: 'bx bx-pie-chart-alt-2',
       active: false,
-      pathName: ''
+      pathName: 'nodfaund'
     },
     {
       id: 4,
       icon: 'bx bx-envelope-open',
       active: false,
-      pathName: ''
+      pathName: 'nodfaund'
     },
     {
       id: 5,
       icon: 'bx bx-bell',
       active: false,
-      pathName: ''
+      pathName: 'nodfaund'
     },
     {
       id: 6,
@@ -44,6 +44,7 @@ function Navbar() {
   ]
   const [navBtns, setNavBtns] = useState(btns)
   const [navbtnsArr, setNavbtnsArr] = useState([...btns])
+  const [actID, setActID] = useState(1)
 
   return (
     <>
@@ -53,7 +54,17 @@ function Navbar() {
         </div>
         <nav className="navbar__nav nav">
           <ul className="nav__list">
-            <Nav navbtnsArr={navbtnsArr} setNavBtns={setNavBtns} />
+            <li className='nav__active_item' style={{
+              top: `${actID * 95 - 95 + 'px'}`
+            }}>
+              <span className='topp'></span>
+              <span className='bott'></span>
+            </li>
+            <Nav
+              setActID={setActID}
+              navbtnsArr={navbtnsArr}
+              setNavBtns={setNavBtns}
+            />
           </ul>
         </nav>
         <div className="navbav__logout">
