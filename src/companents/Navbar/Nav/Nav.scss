@@ -3,6 +3,7 @@
   margin: 10px 0 12px 0;
   background: transparent;
   border-radius: 12px 0px 0px 12px;
+  transition: all 0.4s ease;
 }
 .nav__btn {
   margin: 13px 24px 11px 12px;
@@ -13,6 +14,7 @@
   border-radius: 8px;
   background: transparent;
   color: #ea7c69;
+  transition: all 0.4s ease;
 }
 
 .nav__item-act {
@@ -26,6 +28,7 @@
     height: 20px;
     border-radius: 0;
     background: #252836;
+    transition: all 0.39s ease;
   }
   .topp::after {
     content: "";
@@ -47,6 +50,7 @@
     height: 20px;
     border-radius: 0;
     background: #252836;
+    transition: all 0.39s ease;
   }
   .bott::after {
     content: "";

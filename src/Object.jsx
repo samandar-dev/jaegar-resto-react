@@ -122,8 +122,6 @@ const Foods = [
   {
     id: 16,
     title: "Salted Pasta with mushroom sauce",
-
-
     img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQEw2yw4bybSyh3hWcdd2LvQ31imrCiBVCUVA&usqp=CAU",
     money: 2.69,
     theRest: 6,

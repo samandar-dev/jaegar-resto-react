@@ -1,16 +1,9 @@
-import React, { useEffect, useState } from 'react'
+import React from 'react'
 import Menu from './Menu/Menu'
-import Object from '../../Object'
 import Categor from './Categor/Categor'
 import './Center.scss'
 
-function Center({ saveArr, setSaveArr }) {
-  const [foodArr, setFoodArr] = useState([])
-
-  useEffect(() => {
-    setFoodArr(Object.filter(obj => obj.foodType === 'hot-dishes'))
-  }, []);
-
+function Center({ saveArr, setSaveArr, foodArr, setFoodArr }) {
   return (
     <>
       <div className="center">

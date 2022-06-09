@@ -8,32 +8,38 @@ function Navbar() {
     {
       id: 1,
       icon: 'bx bx-home-alt',
-      active: true
+      active: true,
+      pathName: 'home'
     },
     {
       id: 2,
       icon: 'bx bxs-offer',
-      active: false
+      active: false,
+      pathName: ''
     },
     {
       id: 3,
       icon: 'bx bx-pie-chart-alt-2',
-      active: false
+      active: false,
+      pathName: ''
     },
     {
       id: 4,
       icon: 'bx bx-envelope-open',
-      active: false
+      active: false,
+      pathName: ''
     },
     {
       id: 5,
       icon: 'bx bx-bell',
-      active: false
+      active: false,
+      pathName: ''
     },
     {
       id: 6,
       icon: 'bx bxs-cog',
-      active: false
+      active: false,
+      pathName: 'setting'
     },
   ]
   const [navBtns, setNavBtns] = useState(btns)

@@ -1,8 +1,11 @@
-import React from 'react'
+import React, { useState } from 'react'
 import OrdersItems from './OrdersItems/OrdersItems'
 import './Orders.scss'
+import Modal from './Modal/Modal';
 
 function Orders({ saveArr, setSaveArr }) {
+  const [modalBtn, setModalBtn] = useState(false)
+
   let subtotal = 0;
   let discount = 0;
   saveArr.map(itm => discount += itm.money / 10 * itm.count)
@@ -40,9 +43,10 @@ function Orders({ saveArr, setSaveArr }) {
               <p>${subtotal.toFixed(2)}</p>
             </div>
           </div>
-          <button className='orders__submit_btn'>Continue to Payment</button>
+          <button className='orders__submit_btn' onClick={() => setModalBtn(true)}>Continue to Payment</button>
         </div>
       </div>
+      <Modal modalBtn={modalBtn} setModalBtn={setModalBtn} />
     </>
   )
 }

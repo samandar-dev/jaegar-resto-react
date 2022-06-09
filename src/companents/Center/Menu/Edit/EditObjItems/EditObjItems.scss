@@ -1,0 +1,52 @@
+.setting__food__right_item {
+  position: relative;
+  width: 220px;
+  height: 300px;
+  margin: 8px;
+  border-radius: 8px;
+  text-align: center;
+  background: #1f1d2b;
+  border: 1px dashed #393c49;
+  overflow: hidden;
+
+  img {
+    width: 125px;
+    height: 125px;
+    object-fit: cover;
+    border-radius: 50%;
+    margin-bottom: 16px;
+    margin-top: 20px;
+  }
+  h4 {
+    color: #fff;
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 130%;
+    text-align: center;
+    margin-bottom: 8px;
+    margin: 0 40px;
+    margin-bottom: 8px;
+  }
+  p {
+    font-size: 14px;
+    font-weight: 400;
+    color: #abbbc2;
+    line-height: 140%;
+    text-align: center;
+    margin-bottom: 16px;
+  }
+  button {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    border: none;
+    padding: 16px 0;
+    font-size: 14px;
+    font-weight: 600;
+    color: #ea7c69;
+    text-align: center;
+    background: #ea7c6969;
+    border-radius: 0px 0px 8px 8px;
+  }
+}

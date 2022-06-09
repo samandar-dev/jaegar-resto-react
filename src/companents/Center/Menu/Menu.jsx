@@ -11,9 +11,8 @@ function Menu({ foodArr, saveArr, setSaveArr }) {
 
           <select className='menu__top_selec'>
             <option>Dine In</option>
-            <option>Dine In</option>
-            <option>Dine In</option>
-            <option>Dine In</option>
+            <option>To Go</option>
+            <option>Delivery</option>
           </select>
         </div>
         <ul className="menu__list">

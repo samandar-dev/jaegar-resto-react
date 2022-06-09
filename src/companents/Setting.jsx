@@ -1,20 +1,16 @@
 import React from 'react'
+import Edit from './Center/Menu/Edit/Edit'
 import Navbar from './Navbar/Navbar'
-import Center from './Center/Center'
 import Orders from './Orders/Orders'
 
-function Home({ saveArr, setSaveArr, foodArr, setFoodArr }) {
+function Setting({ saveArr, setSaveArr, foodArr, setFoodArr }) {
   return (
     <>
       <div className="container">
         <Navbar />
-        <Center
+        <Edit
           foodArr={foodArr}
           setFoodArr={setFoodArr}
-          saveArr={saveArr}
-          setSaveArr={setSaveArr}
-        />
-        <Orders
           saveArr={saveArr}
           setSaveArr={setSaveArr}
         />
@@ -23,4 +19,4 @@ function Home({ saveArr, setSaveArr, foodArr, setFoodArr }) {
   )
 }
 
-export default Home
+export default Setting
