@@ -1,11 +1,8 @@
-import React, { useEffect, useState } from 'react'
+import React from 'react'
 import { NavLink } from 'react-router-dom'
 import './Nav.scss'
 
 function Nav({ navbtnsArr, setNavBtns, setActID }) {
-
-  const [btnsArr, setBtnsArr] = useState([...navbtnsArr])
-
   const navBtnActive = (id) => {
     setNavBtns(
       navbtnsArr.map(btn => {
